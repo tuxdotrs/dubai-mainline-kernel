@@ -5071,7 +5071,7 @@ CONFIG_DRM_PANEL_VISIONOX_RM692E5=m
 # Drivers for system framebuffers
 #
 # CONFIG_DRM_EFIDRM is not set
-# CONFIG_DRM_SIMPLEDRM is not set
+CONFIG_DRM_SIMPLEDRM=y
 # end of Drivers for system framebuffers
 
 # CONFIG_DRM_TIDSS is not set
