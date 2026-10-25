@@ -11,7 +11,7 @@
 }:
 
 assert lib.assertMsg (builtins.pathExists ./linux/Makefile)
-  "kernel/linux is empty: run `git submodule update --init --depth 1 kernel/linux`";
+  "linux/ is empty: run `git submodule update --init --recursive --depth 1`";
 
 let
   # e.g. .../bin/aarch64-unknown-linux-gnu-ld.lld when cross-compiling
@@ -27,7 +27,7 @@ in
   configfile = ./config;
   kernelPatches = map (p: { name = baseNameOf p; patch = p; }) [
     # The modem sometimes never learned of rmtfs/tqftpserv and its watchdog
-    # reset it ("DOG detects stalled initialization"); see docs/kernel.md
+    # reset it ("DOG detects stalled initialization"); see dubai-mainline docs/kernel.md
     ./patches/qrtr-ns-wait-for-hello.patch
   ];
   # boot.img uses the gzip'd Image, like pmOS (its /boot/vmlinuz)
