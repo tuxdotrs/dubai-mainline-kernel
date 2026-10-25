@@ -29,6 +29,8 @@ in
     # The modem sometimes never learned of rmtfs/tqftpserv and its watchdog
     # reset it ("DOG detects stalled initialization"); see dubai-mainline docs/kernel.md
     ./patches/qrtr-ns-wait-for-hello.patch
+    # Clock warnings when msm takes the display over from simpledrm
+    ./patches/dubai-simplefb-dsi-phy-clocks.patch
   ];
   # boot.img uses the gzip'd Image, like pmOS (its /boot/vmlinuz)
   target = "Image.gz";
