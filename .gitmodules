@@ -1,0 +1,4 @@
+[submodule "linux"]
+	path = linux
+	url = https://github.com/sc7280-mainline/linux
+	shallow = true
